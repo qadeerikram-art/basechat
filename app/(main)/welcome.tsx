@@ -36,9 +36,12 @@ export default function Welcome({ tenant, className }: Props) {
   const initials = getInitials(tenant.name);
 
   const questions = [
-    tenant.question1 || "Sample question. Lorem ipsum dolor sit amet consectetur. Sample question.",
-    tenant.question2 || "Sample question. Lorem ipsum dolor sit amet consectetur. Sample question.",
-    tenant.question3 || "Sample question. Lorem ipsum dolor sit amet consectetur. Sample question.",
+    tenant.question1 ||
+      "Can you pull up my client’s latest policy documents and endorsements from my drive? I need to review their coverage before our meeting.",
+    tenant.question2 ||
+      "I’m working on a new business submission for [Client Name]. Can you summarize their past claims history from Salesforce and suggest key coverage considerations?",
+    tenant.question3 ||
+      "Check my recent emails and Salesforce activity. Do I have any outstanding follow-ups with insurers or clients regarding pending quotes or renewals",
   ];
 
   return (
@@ -48,9 +51,7 @@ export default function Welcome({ tenant, className }: Props) {
           {initials}
         </div>
         <h1 className="mb-12 text-[40px] font-bold leading-[50px]">
-          Hello, I&apos;m {tenant.name}&apos;s AI.
-          <br />
-          What would you like to know?
+          Hello, welcome to the Cova Personal AI. Talk to your documents.
         </h1>
         <div className="flex items-start justify-evenly space-x-2">
           {questions.map((question, i) => (
